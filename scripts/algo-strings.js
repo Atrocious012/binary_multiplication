@@ -1,36 +1,31 @@
 /**
  * File containing the strings (literal constants) used in the website.
  *
- * For horizontal spacing, use the .tab-n (where n is a natural number) classes found in style.css,
- * as seen in the strings related to the extended Booth's algorithm. Avoid using consecutive &nbsp;
- * since these clutter the text included when the user performs a selection.
+ * For horizontal spacing, use the .tab-n (where n is a natural number) classes found in style.css, 
  */
 
 /* --- ALGORITHM NAMES --- */
-const algoNames = [`Pencil-and-Paper Method`, `Booth's Algorithm`, `Extended Booth's Algorithm`];
+const algoNames = [`Pencil-and-Paper Method`, `Booth's Algorithm`];
 
 /* --- TRIVIA HEADER --- */
 /* End with a period (or any other terminal punctuation mark), followed by a space. */
-const pencilTriviaHeader = 'Are We There Yet? ';
-const boothsTriviaHeader = 'From Small Beginnings. ';
-const extendedBoothsTriviaHeader = 'Triple Treat. ';
+const pencilTriviaHeader = '';
+const boothsTriviaHeader = '';
 
-const triviaHeaders = [pencilTriviaHeader, boothsTriviaHeader, extendedBoothsTriviaHeader];
+
+const triviaHeaders = [pencilTriviaHeader, boothsTriviaHeader];
 
 /* --- TRIVIA --- */
 const pencilTrivia = `Hardware implementations optimize the paper-and-pencil method by adding multiple partial products together in
-    a single cycle, such as Wallace trees&nbsp; 
-    and Dadda multipliers&nbsp; 
+    a single cycle.&nbsp; 
+    &nbsp; 
     `;
 
 const boothsTrivia = `Originally devised only to optimize signed binary multiplication, Booth's algorithm is now applied in various technologies such as face recognition&nbsp;
     and digital signal processing&nbsp;`;
 
-const extendedBoothsTrivia = `In 2008, an extension of Booth's algorithm for multiplying three operands on field-programmable gate arrays (FPGAs) 
-    was proposed by Israeli researchers Y. Ben Asher and E. Stein&nbsp; 
-    `;
 
-const trivia = [pencilTrivia, boothsTrivia, extendedBoothsTrivia];
+const trivia = [pencilTrivia, boothsTrivia]; 
 
 /* --- PENCIL-AND-PAPER ALGORITHM --- */
 const pencilIntro = `Similar to decimal multiplication, the pencil-and-paper method involves multiplying every bit of 
@@ -79,8 +74,7 @@ const pencilAlgo = `${pencilIntro}
     ${pencilStepC}`;
 
 /* --- BOOTH'S ALGORITHM --- */
-const boothsIntro = `The Booth's Algorithm is a signed binary multiplication technique that was introduced by Andrew D. Booth in 1951.
-    
+const boothsIntro = `The Booth's Algorithm is a signed binary multiplication technique that was introduced by Andrew D. Booth in 1951.    
      Using this technique, two signed binary numbers are multiplied in two's complement notation, and an encoding scheme is employed to simplify the operation and make it more efficient. <br> <br>`;
 
 const boothsStepStrings = [
@@ -192,195 +186,6 @@ const boothsAlgo = `${boothsIntro}
     ${boothsStepD}
     ${boothsStepDTable}`;
 
-/* --- EXTENDED BOOTH'S ALGORITHM --- */
-const extendedBoothsIntro = `Introduced by O.L. MacSorley in 1961 
-    and given a streamlined proof by L.P. Rubinfield in 1975, 
-    this technique, which is also known as <b>modified Booth's algorithm</b>, <b>radix-4 Booth's algorithm</b>, or 
-    <b>bit-pair recoding</b>, reduces the number of intermediate summands by half. <br> <br>`;
-
-const extendedBoothsStepStrings = [
-	"A. Represent the operands in two's complement.\n\t1. If the user enters a decimal number, it is represented using the fewest number of bits.\n\t2. If the user enters a binary number, the number of bits follows the user's input. \n\n",
-	'B. If necessary, perform sign extension to make the number of bits of the operands equal.\n\n',
-	"\n\nC. Convert the multiplier to its extended Booth's equivalent.\n\t1. Append 0 to the least significant bit. \n",
-	'\n\n\t2. If the multiplier has an odd number of bits (prior to appending 0), perform sign extension. \n',
-	'\n\n\t3. Perform bit-pair recoding starting at the least significant bit.\n',
-	'\n\nD. Multiply using pencil-and-paper method — but ignore the extra step even if the multiplier is negative. \n   Since a bit-pair is equivalent to two bits, skip two bits for each intermediate product.\n\n'
-];
-
-const extendedBoothsStepA = `<div class = "hanging-indent">
-        <b>A.<span class="tab-13"></span>Represent the operands in two's complement.</b>
-    </div>
-    <div class = "indented hanging-indent">
-        1.<span class="tab-13"></span>If the user enters a decimal number, it is represented using the fewest number of bits.
-    </div>
-    <div class = "indented hanging-indent">
-        2.<span class="tab-13"></span>If the user enters a binary number, the number of bits follows the user's input. 
-    </div>`;
-
-const extendedBoothsStepB = `<div class = "hanging-indent">
-        <b>B.<span class="tab-13"></span>If necessary, perform sign extension to make the number of bits of the operands equal.</b>
-    </div>`;
-
-const extendedBoothsStepC0 = `<div class = "hanging-indent">
-        <b>C.<span class="tab-13"></span>Convert the multiplier to its extended Booth's equivalent.</b>
-    </div>`;
-
-const extendedBoothsStepC1 = `<div class = "indented hanging-indent">
-        1.<span class="tab-13"></span>Append 0 to the least significant bit.
-    </div>`;
-
-const extendedBoothsStepC2 = `<div class = "indented hanging-indent">
-        2.<span class="tab-13"></span>If the multiplier has an odd number of bits (prior to appending 0), perform sign extension.
-    </div>`;
-
-const extendedBoothsStepC3 = `<div class = "indented hanging-indent">
-        3.<span class="tab-13"></span>Perform bit-pair recoding starting at the least significant bit.
-    </div>`;
-
-const extendedBoothsStepC = `${extendedBoothsStepC0}
-    ${extendedBoothsStepC1}
-    ${extendedBoothsStepC2}
-    ${extendedBoothsStepC3}`;
-
-const extendedBoothsStepCShowTable = `<div class = "indented-1">
-        Click <a onclick = "showExtendedBoothsRecoding(); scrollToExtendedBoothsRecoding();" class = "with-underline no-decor no-hover" id = "show-extended-booths-recording">here</a> 
-        to <span id = "show-hide-extended-booths-recoding">show</span> the recoding table.
-    </div>`;
-
-const extendedBoothsStepCTableProvision = `<span id = "extended-booths-step-c-table-provision"></span>`;
-
-const extendedBoothsStepCTable = `<table class = "indented-2 procedure merged">
-        <tr>
-            <th rowspan = "2">b<sub>i+1</sub> b<sub>i</sub> b<sub>i-1</sub></th>  
-            <th rowspan = "2">Recoding<sub></sub></th>
-            <th colspan = "3">Mnemonic<sub></sub></th>
-        </tr>
-        <tr>
-            <td>Booth's of b<sub>i+1</sub> b<sub>i</sub></td>
-            <td>Booth's of b<sub>i</sub> b<sub>i-1</sub></td>
-            <td>Derivation<sub></sub></td>
-        </tr>
-        <tr>
-            <td><b>000</b></td>
-            <td><b>0</b></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0 &times; 2 + 0 </td>
-        </tr>
-        <tr>
-            <td><b>001</b></td>
-            <td><b>+1</b></td>
-            <td>0</td>
-            <td>+1</td>
-            <td>0 &times; 2 + 1 </td>
-        </tr>
-        <tr>
-            <td><b>010</b></td>
-            <td><b>+1</b></td>
-            <td>+1</td>
-            <td>-1</td>
-            <td>+1 &times; 2 - 1 </td>
-        </tr>
-        <tr>
-            <td><b>011</b></td>
-            <td><b>+2</b></td>
-            <td>+1</td>
-            <td>0</td>
-            <td>+1 &times; 2 + 0 </td>
-        </tr>
-        <tr>
-            <td><b>100</b></td>
-            <td><b>-2</b></td>
-            <td>-1</td>
-            <td>0</td>
-            <td>-1 &times; 2 + 0 </td>
-        </tr>
-        <tr>
-            <td><b>101</b></td>
-            <td><b>-1</b></td>
-            <td>-1</td>
-            <td>+1</td>
-            <td>-1 &times; 2 + 1 </td>
-        </tr>
-        <tr>
-            <td><b>110</b></td>
-            <td><b>-1</b></td>
-            <td>0</td>
-            <td>-1</td>
-            <td>0 &times; 2 - 1 </td>
-        </tr>
-        <tr>
-            <td><b>111</b></td>
-            <td><b>0</b></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0 &times; 2 + 0 </td>
-        </tr>
-    </table>`;
-
-const extendedBoothsStepD = `<div class = "hanging-indent">
-        <b>D.<span class="tab-12"></span>Multiply using pencil-and-paper method &mdash; but ignore the extra step even if the multiplier 
-        is negative.<br>
-        Since a bit-pair is equivalent to two bits, skip <u>two</u> bits for each 
-        intermediate product.</b>
-    </div>`;
-
-const extendedBoothsStepDShowTable = `<div class = "indented-0 small-top-space">
-        Click <a onclick = "showExtendedBoothsOperations(); scrollToExtendedBoothsOperations();" class = "with-underline no-decor no-hover" id = "show-extended-booths-recording">here</a> 
-        to <span id = "show-hide-extended-booths-operations">show</span> the multiplication guide.
-    </div>`;
-
-const extendedBoothsStepDTableProvision = `<span id = "extended-booths-step-d-table-provision"></span>`;
-
-const extendedBoothsStepDTable = `<table class = "indented-2 procedure">
-        <tr>
-            <th>Multiply by</th>
-            <th>Procedure</th>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>+1</td>
-            <td>Itself</td>
-        </tr>
-        <tr>
-            <td>-1</td>
-            <td>Two's complement</td>
-        </tr>
-        <tr>
-            <td>+2</td>
-            <td>Arithmetic left shift (append 0 to the least significant bit)</td>
-        </tr>
-        <tr>
-            <td>-2</td>
-            <td>Two's complement, then arithmetic left shift</td>
-        </tr>
-    </table>`;
-
-const extendedBoothsPicture = `<br><div class = "div-picture">
-        <img src = "assets/ibm-extended-booths.jpg" class = "picture">
-        <span class = "tab-13"></span>
-        <img src = "assets/ibm-extended-booths-2.jpg" class = "picture">
-        <br>
-        <div class = "picture-caption">
-            To perform fast multiplication, the <b>IBM System/360 Model 91</b>, released in January 1966 and used
-            at the NASA Goddard Space Flight Center back in the late 60s,  employed the extended Booth's algorithm and utilized 
-            a tree of carry-save adders. 
-        </div>
-    </div><br>`;
-
-const extendedBoothsAlgo = `${extendedBoothsIntro}
-    ${extendedBoothsStepA}
-    ${extendedBoothsStepB}
-    ${extendedBoothsStepC}
-    ${extendedBoothsStepCTable}
-    ${extendedBoothsStepD}
-    ${extendedBoothsStepDTable}
-    ${extendedBoothsPicture}`;
-
-const algoSteps = [pencilAlgo, boothsAlgo, extendedBoothsAlgo];
-
+const algoSteps = [pencilAlgo, boothsAlgo]; 
 /* Verification step at the end of every multiplication algorithm demonstration (simulation) */
 const verify = `<span class = "material-icons">check_circle_outline</span><span class = "tab-13"></span><b><u>Verification</u>:</b>`;
