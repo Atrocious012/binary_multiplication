@@ -1,6 +1,8 @@
 # binary_multiplication
-This is the project titled "binary_multiplication". It is a static website which multiplies 2 numbers; a multiplicand and an multiplier, entered by the user which is converted to binary number and then multiplication operation is performed. There are 2 methods we have used in the project - 1. Paper and Pencil 2. Booth's Algo.
-
+This is the project titled "binary_multiplication". It is a static website which multiplies 2 numbers; a multiplicand and an multiplier, entered by the user which is converted to binary number, if entered in decimal format and then multiplication operation is performed. There are 2 methods we have used in the project -
+-   Pencil-and-paper method
+-   Booth's algorithm
+  
 The following are its key features:
 
 -   Support for both decimal and binary number input, up to a maximum of 16 bits (minimum: &ndash;2<sup>15</sup> = &ndash;32768, maximum: 2<sup>15</sup> &ndash; 1 = 32767)
