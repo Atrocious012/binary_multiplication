@@ -1,8 +1,3 @@
-/**
- * File containing the strings (literal constants) used in the website.
- *
- * For horizontal spacing, use the .tab-n (where n is a natural number) classes found in style.css, 
- */
 
 /* --- ALGORITHM NAMES --- */
 const algoNames = [`Pencil-and-Paper Method`, `Booth's Algorithm`];
